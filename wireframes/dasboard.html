@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 1px solid #000;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center; /* Alinear elementos verticalmente */
+}
+
+.navbar-left > div {
+    margin-right: 10px; /* Espacio entre los elementos */
+}
+
+.navbar-right {
+    flex: 1;
+    text-align: right;
+}
+
+.menu-icon, .profile-icon {
+    cursor: pointer;
+}
+
+/* Estilos del sidebar */
+.sidebar {
+    /* background-color: #000; */
+    color: #000000;
+    width: 200px;
+    padding: 20px;
+    border-right: 1px solid #000;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si el contenido excede la altura */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Estilos del contenido */
+.content {
+    margin-left: 220px; /* Ajustar según el ancho del sidebar */
+    padding: 20px;
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si el contenido excede la altura */
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    margin-left: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Hacer que todas las cards tengan el mismo ancho */
+}
+
+/* Estilos para el contenedor */
+.container {
+    display: flex;
+    margin-top: 20px; /* Espacio entre las cards y los contenedores */
+}
+
+.container1{
+    margin-left: 260px;
+}
+
+/* Estilos para los contenedores 1 y 2 */
+.container1, .container2 {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+/* Estilos para el contenedor 2 */
+.container2 {
+    margin-right: 20px;
+    margin-left: 20px; /* Espacio entre los contenedores */
+}
+
+.container1 table {
+    width: 100%;
+    border-collapse: collapse; /* Para que los bordes de las celdas se unan */
+}
+
+.container1 th, .container1 td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div>
+                    <h1>Gefarm</h1>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+            </div>
+            <div class="navbar-right">
+                <div class="profile-icon">Perfil</div>
+            </div>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li>Ver sitio web</li>
+            <li>Dashboard</li>
+            <li>Usuarios</li>
+            <li>Clientes</li>
+            <li>Tienda</li>
+            <li>Productos</li>
+            <li>Pedidos</li>
+            <li>Suscripciones</li>
+            <li>Mensajes</li>
+            <li>Salir</li>
+
+        </ul>
+    </aside>
+    <main class="content">
+        <div class="card">Clientes</div>
+        <div class="card">Productos</div>
+        <div class="card">Pedidos</div>
+        <div class="card">Usuarios</div>
+    </main>
+    <div class="container">
+        <div class="container1">
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Cliente</th>
+                    <th>Estado</th>
+                    <th>Monto</th>
+                </thead>
+                <tbody>
+                    <td>1</td>
+                    <td>Jordy Vega</td>
+                    <td>Completo</td>
+                    <td>Monto</td>
+                </tbody>
+            </table>
+        </div>
+        <div class="container2">
+            <canvas id="graficaPastel"></canvas>
+        </div>        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Datos para la gráfica de pastel
+    var data = {
+        labels: ['A', 'B'],
+        datasets: [{
+            data: [10, 40],
+            backgroundColor: ['#000', '#c1c1c1']
+        }]
+    };
+
+    // Configuración de la gráfica
+    var options = {
+        responsive: true,
+        maintainAspectRatio: false
+    };
+
+    // Obtener el lienzo de la gráfica
+    var ctx = document.getElementById('graficaPastel').getContext('2d');
+
+    // Crear la gráfica de pastel
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: options
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME - GEFARM</title>
+    <style>
+        body {
+            padding: 1rem;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+        header {
+            /* background-color: #333; */
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #000;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+            border: 1px solid #000;
+            padding: 5px 10px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+        .logo {
+            margin-right: auto;
+        }
+        .search,
+        .cart {
+            margin-left: auto;
+        }
+        .slider {
+            background-color: #fff;
+            color: #000;
+            padding: 10px;
+            border-bottom: 1px solid #000;
+        }
+        .slider-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .slider-content p {
+            margin: 0;
+        }
+        .slider-content .welcome,
+        .slider-content .account {
+            border: 1px solid #000;
+            padding: 5px 10px;
+        }
+
+        .banner {
+            /* background-color: #333; */
+            color: #565656;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+
+        .brand-section {
+            /* background-color: #f0f0f0; */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .brand-section img {
+            width: 100px;
+            margin-right: 20px;
+        }
+        footer {
+            /* background-color: #333; */
+            color: #3c3c3c;
+            padding: 20px;
+            text-align: center;
+        }
+        .checkout-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .checkout-section .card {
+            width: 48%; /* Distribuir en 2 columnas con un pequeño margen entre ellas */
+            background-color: #fff;
+            border: 1px solid #000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .checkout-section .card.left {
+            margin-right: 2%;
+        }
+        .checkout-section .card.right {
+            margin-left: 2%;
+        }
+        .checkout-section .card h3 {
+            margin-top: 0;
+        }
+        .checkout-section .card .address-details {
+            margin-bottom: 20px;
+        }
+        .checkout-section .card .order-summary {
+            font-size: 1.1em;
+        }
+        .checkout-section .card .subtotal {
+            margin-bottom: 10px;
+        }
+        .checkout-section .card .total {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .checkout-section .card .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .checkout-section .card .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+        <div class="slider">
+            <div class="container">
+                <div class="slider-content">
+                    <p class="welcome">Bienvenido usuario</p>
+                    <p class="account">Mi cuenta | Salir</p>
+                </div>
+            </div>
+        </div>
+        
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo de Mi Tienda Online">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Tienda</a></li>
+                    <li><a href="#">Carrito</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Buscar...">
+                <button>Buscar</button>
+            </div>
+            <div class="cart">
+                <img src="cart.png" alt="Carrito">
+                <span>0</span>
+            </div>
+        </header>
+    
+        <div class="section">
+            <h2>Detalle de Envío y Resumen del Pedido</h2>
+            <div class="checkout-section">
+                <div class="card left">
+                    <h3>Dirección de Envío</h3>
+                    <div class="address-details">
+                        <p><strong>Dirección:</strong> Calle 123, Ciudad, País</p>
+                        <p><strong>Departamento:</strong> Departamento XYZ</p>
+                    </div>
+                </div>
+                <div class="card right">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="order-summary">
+                        <p><strong>Subtotal:</strong> $XX.XX</p>
+                        <p><strong>Total:</strong> $XX.XX</p>
+                    </div>
+                    <button class="btn">Pagar</button>
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <p>&copy; 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+        </footer>
+</body>
+</html>
